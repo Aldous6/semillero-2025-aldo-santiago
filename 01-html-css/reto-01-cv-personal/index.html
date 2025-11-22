@@ -3,120 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Online - Aldo Santiago</title>
+    <title>Aldo Santiago | Data Scientist</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <header>
-        <div class="perfil-container">
-            <img src="https://via.placeholder.com/150" alt="Foto de Aldo Santiago" class="foto-perfil">
-            <h1>Aldo Santiago Márquez</h1>
-            <h2>Físico | Machine Learning Engineer & Data Scientist</h2>
-            <p style="margin-top: 10px; font-size: 0.9rem;">
-                <i class="fas fa-map-marker-alt"></i> Puebla, México
-            </p>
-        </div>
-    </header>
-
-    <main>
-        
-        <section id="sobre-mi">
-            <h3>Sobre mí</h3>
-            <p>
-                Profesional de datos con formación en Física y sólida experiencia en Python, aprendizaje supervisado y Deep Learning. 
-                Cuento con capacidad para trabajar "end-to-end": desde la limpieza de datos e ingeniería de características hasta 
-                la evaluación de modelos y la comunicación clara de resultados a stakeholders técnicos y no técnicos.
-            </p>
-        </section>
-
-        <section id="experiencia">
-            <h3>Experiencia Profesional</h3>
+    <div class="container">
+        <div class="top-bar">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
             
-            <div class="item">
-                <h4>Investigación en ML sobre Datos de Simulación</h4>
-                <span class="fecha">BUAP | Feb 2024 - Sep 2025</span>
-                <p>
-                    Construcción de modelos de ML supervisado en datasets de simulación a gran escala. 
-                    Implementación de pipelines de ingeniería de características (selección, escalado, transformación) 
-                    y documentación rigurosa de experimentos para facilitar la colaboración futura.
+            <div class="window-title-container" onclick="iniciarDescarga()">
+                <span class="window-title">aldo_santiago_cv.py</span>
+                <i class="fas fa-download download-icon" title="Descargar PDF"></i>
+            </div>
+
+            <div class="loading-bar-container" id="loadingContainer">
+                <div class="loading-bar" id="loadingBar"></div>
+            </div>
+        </div>
+
+        <header>
+            <div class="terminal-line">
+                <span class="prompt">user@root:~$</span> 
+                <span class="typing-effect">print("Hola, soy Aldo Santiago")</span>
+                <span class="cursor">|</span>
+            </div>
+            <h2 class="subtitle">Físico | Machine Learning Engineer | Data Scientist</h2>
+            <div class="location">
+                <span class="tag">Puebla, MX</span>
+                <span class="tag">Bilingüe (ESP/ENG)</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="card fade-in">
+                <h3 class="section-title"><span class="hash">#</span> Sobre mí</h3>
+                <p class="code-text">
+                    Profesional de datos con formación en <span class="highlight">Física</span> y sólida experiencia en Python, aprendizaje supervisado y Deep Learning. 
+                    Capacidad "End-to-End": desde limpieza de datos hasta despliegue de modelos.
                 </p>
+            </section>
+
+            <section class="fade-in delay-1">
+                <h3 class="section-title"><span class="hash">#</span> Experiencia_Profesional = [</h3>
+                
+                <div class="card job-card">
+                    <div class="card-header">
+                        <h4>Investigación ML & Simulación</h4>
+                        <span class="date">BUAP | 2024 - 2025</span>
+                    </div>
+                    <p>Construcción de modelos supervisados y pipelines de ingeniería de características a gran escala.</p>
+                </div>
+
+                <div class="card job-card">
+                    <div class="card-header">
+                        <h4>Operador Remoto Internacional</h4>
+                        <span class="date">Remoto | 2023 - 2025</span>
+                    </div>
+                    <p>Monitoreo de sistemas complejos en tiempo real, control de calidad de datos y colaboración global.</p>
+                </div>
+                
+                <p class="bracket">]</p> </section>
+
+            <section class="fade-in delay-2">
+                <h3 class="section-title"><span class="hash">#</span> Proyectos_Destacados</h3>
+                <div class="grid-container">
+                    <div class="card project-card">
+                        <h4><span class="icon">⚡</span> CNNs & Imágenes</h4>
+                        <p>Clasificación en MNIST/CIFAR-10 experimentando con arquitecturas TensorFlow.</p>
+                    </div>
+                    <div class="card project-card">
+                        <h4><span class="icon">🩻</span> Neumonía Detection</h4>
+                        <p>IA aplicada a rayos X de tórax enfocada en interpretabilidad médica.</p>
+                    </div>
+                    <div class="card project-card">
+                        <h4><span class="icon">📈</span> Series de Tiempo</h4>
+                        <p>Pronóstico financiero usando modelos ARIMA y Prophet para volatilidad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fade-in delay-3">
+                <h3 class="section-title"><span class="hash">#</span> Stack_Tecnológico</h3>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">HTML5 & CSS3</span>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="comment">// Contacto</p>
+            <div class="links">
+                <a href="mailto:aldo.santiago.marquez@outlook.com" class="btn-link">Email</a>
+                <a href="https://www.linkedin.com/in/aldo-santiago-marquez-dc" target="_blank" class="btn-link">LinkedIn</a>
+                <a href="https://github.com/semillero-2025-aldo-santiago" target="_blank" class="btn-link">GitHub</a>
             </div>
+            <p class="copyright">© 2025 System.exit(0)</p>
+        </footer>
+    </div>
+<script>
+        function iniciarDescarga() {
+            const container = document.getElementById('loadingContainer');
+            const bar = document.getElementById('loadingBar');
+            const icon = document.querySelector('.download-icon');
 
-            <div class="item">
-                <h4>Operador Remoto - Colaboración Científica Internacional</h4>
-                <span class="fecha">Remoto | Ene 2023 - Sep 2025</span>
-                <p>
-                    Monitoreo en tiempo real de sistemas técnicos complejos para asegurar una operación continua y segura. 
-                    Realización de controles de calidad de datos, registro de incidentes y coordinación con equipos internacionales.
-                </p>
-            </div>
+            // 1. Mostrar la barra
+            container.style.display = 'block';
+            
+            // 2. Cambiar icono para feedback visual
+            icon.className = "fas fa-spinner fa-spin download-icon"; 
 
-            <div class="item">
-                <h4>Proyecto Académico de Análisis de Datos</h4>
-                <span class="fecha">BUAP | Ene 2023 - Jun 2023</span>
-                <p>
-                    Análisis exploratorio y estadístico de datos experimentales usando Python. 
-                    Limpieza y estructuración de datasets crudos, añadiendo validaciones contra benchmarks para asegurar la consistencia de los datos.
-                </p>
-            </div>
-        </section>
+            // 3. Iniciar animación (simulamos 1.5 segundos de carga)
+            setTimeout(() => {
+                bar.style.width = '100%';
+            }, 100);
 
-        <section id="proyectos">
-            <h3>Proyectos Destacados</h3>
-            <div class="item">
-                <h4>Clasificación de Imágenes (CNNs)</h4>
-                <p>Experimentación con arquitecturas y regularización usando TensorFlow y Keras en datasets MNIST y CIFAR-10.</p>
-            </div>
-            <div class="item">
-                <h4>Detección de Neumonía</h4>
-                <p>Clasificación de imágenes médicas a partir de rayos X de tórax, enfatizando el rendimiento del modelo y la interpretabilidad básica.</p>
-            </div>
-            <div class="item">
-                <h4>Análisis de Series de Tiempo Financieras</h4>
-                <p>Pronóstico y estudio de tendencias, estacionalidad y volatilidad utilizando modelos ARIMA y Prophet.</p>
-            </div>
-         </section>
+            // 4. Cuando termine la "carga", descargar y resetear
+            setTimeout(() => {
+                // Crear enlace temporal para descargar
+                const link = document.createElement('a');
+                link.href = 'cv_aldo_santiago.pdf'; // Asegúrate que el nombre coincida
+                link.download = 'CV_Aldo_Santiago.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
 
-        <section id="educacion">
-            <h3>Educación y Certificaciones</h3>
-            <div class="item">
-                <h4>Licenciatura en Física</h4>
-                <span class="fecha">Benemérita Universidad Autónoma de Puebla (BUAP)</span>
-            </div>
-            <ul class="lista-skills" style="margin-top: 10px;">
-                <li>Machine Learning Specialization (Coursera)</li>
-                <li>Diplomado en Data Science (BUAP)</li>
-                <li>Alura Latam - Data & Development Track</li>
-            </ul>
-        </section>
+                // Resetear animación
+                setTimeout(() => {
+                    bar.style.width = '0%';
+                    container.style.display = 'none';
+                    icon.className = "fas fa-check download-icon"; // Icono de éxito
+                    
+                    // Volver al icono original después de 2 seg
+                    setTimeout(() => {
+                        icon.className = "fas fa-download download-icon";
+                    }, 2000);
+                }, 500);
 
-        <section id="skills">
-            <h3>Habilidades Técnicas</h3>
-            <ul class="lista-skills">
-                <li>Python (NumPy, Pandas)</li>
-                <li>Machine Learning (Scikit-learn)</li>
-                <li>Deep Learning (TensorFlow, Keras)</li>
-                <li>SQL & Bases de Datos</li>
-                <li>Git & GitHub</li>
-                <li>Docker & Linux</li>
-                <li>Power BI</li>
-                <li>Inglés (B2)</li>
-            </ul>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Contacto: <a href="mailto:aldo.santiago.marquez@outlook.com">aldo.santiago.marquez@outlook.com</a></p>
-        <p>
-            <a href="https://www.linkedin.com/in/aldo-santiago-marquez-dc" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/semillero-2025-aldo-santiago" target="_blank">GitHub</a>
-        </p>
-        <p>&copy; 2025 Aldo Santiago Márquez.</p>
-    </footer>
-
+            }, 1500); // Tiempo total de la carga falsa
+        }
+    </script>
 </body>
 </html>
