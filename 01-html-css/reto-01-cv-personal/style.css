@@ -382,3 +382,13 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+
+html {
+    scroll-behavior: smooth; /* Hace que al dar clic en el menú, baje suavemente en vez de saltar de golpe */
+}
+
+/* Esto cambia el color cuando seleccionas texto con el mouse */
+::selection {
+    background-color: var(--accent-cyan);
+    color: #0d1117;
+}
