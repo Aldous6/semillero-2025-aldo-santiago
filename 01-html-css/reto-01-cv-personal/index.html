@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aldo Santiago | Data Scientist</title>
+
+    <!-- SEO básico -->
+    <meta name="description" content="Portafolio y CV de Aldo Santiago, Machine Learning Engineer y Data Scientist con formación en Física, especializado en modelos end-to-end, deep learning y análisis de datos.">
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -11,6 +15,7 @@
 <body>
 
     <div class="container">
+        <!-- TOP BAR -->
         <div class="top-bar">
             <div class="dots">
                 <div class="dot red"></div>
@@ -18,23 +23,41 @@
                 <div class="dot green"></div>
             </div>
             
-            <div class="window-title-container" onclick="iniciarDescarga()">
+            <!-- Contenedor clickeable para descargar CV -->
+            <div class="window-title-container"
+                 onclick="iniciarDescarga()"
+                 role="button"
+                 tabindex="0"
+                 aria-label="Descargar CV en PDF">
                 <span class="window-title">aldo_santiago_cv.py</span>
                 <i class="fas fa-download download-icon" title="Descargar PDF"></i>
             </div>
 
+            <!-- Barra de carga -->
             <div class="loading-bar-container" id="loadingContainer">
                 <div class="loading-bar" id="loadingBar"></div>
             </div>
         </div>
 
+        <!-- NAV INTERNO -->
+        <nav class="nav-inline">
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#stack">Stack</a>
+            <a href="#educacion">Educación</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <!-- HEADER -->
         <header>
             <div class="terminal-line">
                 <span class="prompt">user@root:~$</span> 
                 <span class="typing-effect">print("Hola, soy Aldo Santiago")</span>
                 <span class="cursor">|</span>
             </div>
-            <h2 class="subtitle">Físico | Machine Learning Engineer | Data Scientist</h2>
+            <h2 class="subtitle">Machine Learning Engineer | Data Scientist | Físico</h2>
             <div class="location">
                 <span class="tag">Puebla, MX</span>
                 <span class="tag">Bilingüe (ESP/ENG)</span>
@@ -42,101 +65,182 @@
         </header>
 
         <main>
-            <section class="card fade-in">
-                <h3 class="section-title"><span class="hash">#</span> Sobre mí</h3>
+            <!-- SOBRE MÍ -->
+            <section id="sobre-mi" class="card fade-in">
+                <h3 class="section-title"><span class="hash">#</span> Sobre_mí</h3>
                 <p class="code-text">
-                    Profesional de datos con formación en <span class="highlight">Física</span> y sólida experiencia en Python, aprendizaje supervisado y Deep Learning. 
-                    Capacidad "End-to-End": desde limpieza de datos hasta despliegue de modelos.
+                    Profesional de datos con experiencia en 
+                    <span class="highlight">machine learning</span>, 
+                    <span class="highlight">deep learning</span> y análisis estadístico aplicado. 
+                    Trabajo de forma <span class="highlight">end-to-end</span>: desde la limpieza y validación de datos 
+                    hasta la construcción, evaluación e interpretación de modelos, comunicando resultados de forma clara 
+                    a equipos técnicos y no técnicos.
                 </p>
             </section>
 
-            <section class="fade-in delay-1">
+            <!-- EXPERIENCIA -->
+            <section id="experiencia" class="fade-in delay-1">
                 <h3 class="section-title"><span class="hash">#</span> Experiencia_Profesional = [</h3>
                 
                 <div class="card job-card">
                     <div class="card-header">
-                        <h4>Investigación ML & Simulación</h4>
-                        <span class="date">BUAP | 2024 - 2025</span>
+                        <h4>Machine Learning en Datos de Simulación</h4>
+                        <span class="date">BUAP | 2024 – 2025</span>
                     </div>
-                    <p>Construcción de modelos supervisados y pipelines de ingeniería de características a gran escala.</p>
+                    <ul class="job-list">
+                        <li>Entrenamiento de modelos supervisados sobre datos de simulación a gran escala.</li>
+                        <li>Diseño de pipelines de <em>feature engineering</em> (selección, escalado, transformación).</li>
+                        <li>Evaluación con métricas como accuracy, ROC-AUC y matriz de confusión.</li>
+                        <li>Documentación de experimentos y resultados para futuras extensiones.</li>
+                    </ul>
                 </div>
 
                 <div class="card job-card">
                     <div class="card-header">
-                        <h4>Operador Remoto Internacional</h4>
-                        <span class="date">Remoto | 2023 - 2025</span>
+                        <h4>Operador Remoto – Colaboración Científica Internacional</h4>
+                        <span class="date">Remoto | 2023 – 2025</span>
                     </div>
-                    <p>Monitoreo de sistemas complejos en tiempo real, control de calidad de datos y colaboración global.</p>
+                    <ul class="job-list">
+                        <li>Monitoreo en tiempo real de sistemas técnicos complejos.</li>
+                        <li>Verificación de calidad de datos y apoyo en calibración de instrumentos.</li>
+                        <li>Registro estructurado de incidentes y comunicación con equipos internacionales.</li>
+                    </ul>
+                </div>
+
+                <div class="card job-card">
+                    <div class="card-header">
+                        <h4>Proyecto Académico de Análisis de Datos</h4>
+                        <span class="date">BUAP | 2023</span>
+                    </div>
+                    <ul class="job-list">
+                        <li>Análisis exploratorio y estadístico de datos experimentales con Python.</li>
+                        <li>Limpieza, estructuración y validación de datasets frente a benchmarks.</li>
+                        <li>Contribución a simulaciones y documentación del flujo de análisis.</li>
+                    </ul>
                 </div>
                 
-                <p class="bracket">]</p> </section>
+                <p class="bracket">]</p>
+            </section>
 
-            <section class="fade-in delay-2">
+            <!-- PROYECTOS -->
+            <section id="proyectos" class="fade-in delay-2">
                 <h3 class="section-title"><span class="hash">#</span> Proyectos_Destacados</h3>
                 <div class="grid-container">
                     <div class="card project-card">
-                        <h4><span class="icon">⚡</span> CNNs & Imágenes</h4>
-                        <p>Clasificación en MNIST/CIFAR-10 experimentando con arquitecturas TensorFlow.</p>
+                        <h4><span class="icon">⚡</span> CNNs en MNIST y CIFAR-10</h4>
+                        <p>Clasificación de imágenes probando arquitecturas, regularización y evaluación robusta.</p>
+                        <p class="code-text">Stack: TensorFlow, Keras, Python</p>
+                        <!-- <a href="TU_LINK_GITHUB" target="_blank" rel="noopener noreferrer" class="project-link">Ver repo →</a> -->
                     </div>
                     <div class="card project-card">
-                        <h4><span class="icon">🩻</span> Neumonía Detection</h4>
-                        <p>IA aplicada a rayos X de tórax enfocada en interpretabilidad médica.</p>
+                        <h4><span class="icon">🩻</span> Detección de Neumonía en Rayos X</h4>
+                        <p>Modelo de clasificación para neumonía con enfoque en desempeño e interpretabilidad básica.</p>
+                        <p class="code-text">Stack: CNNs, Keras, Python</p>
                     </div>
                     <div class="card project-card">
-                        <h4><span class="icon">📈</span> Series de Tiempo</h4>
-                        <p>Pronóstico financiero usando modelos ARIMA y Prophet para volatilidad.</p>
+                        <h4><span class="icon">🧠</span> Generación de Texto con Transformers</h4>
+                        <p>Modelado de secuencias y generación automática de texto.</p>
+                        <p class="code-text">Stack: HuggingFace, Python</p>
+                    </div>
+                    <div class="card project-card">
+                        <h4><span class="icon">📈</span> Series de Tiempo Financieras</h4>
+                        <p>Análisis de tendencias, estacionalidad y volatilidad para pronóstico.</p>
+                        <p class="code-text">Stack: ARIMA, Prophet</p>
                     </div>
                 </div>
             </section>
 
-            <section class="fade-in delay-3">
+            <!-- STACK TECNOLÓGICO -->
+            <section id="stack" class="fade-in delay-3">
                 <h3 class="section-title"><span class="hash">#</span> Stack_Tecnológico</h3>
+
+                <h4 class="mini-title">Core de Datos &amp; ML</h4>
                 <div class="skills-wrapper">
-                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Python (OOP)</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Scikit-learn</span>
                     <span class="skill-tag">TensorFlow</span>
                     <span class="skill-tag">Keras</span>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">ARIMA</span>
+                    <span class="skill-tag">Prophet</span>
+                    <span class="skill-tag">SQL básico</span>
+                </div>
+
+                <h4 class="mini-title">LLMs &amp; GenAI</h4>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">OpenAI API</span>
+                    <span class="skill-tag">Google Gemini</span>
+                    <span class="skill-tag">DeepSeek</span>
+                    <span class="skill-tag">HuggingFace Transformers</span>
+                </div>
+
+                <h4 class="mini-title">Herramientas &amp; Workflow</h4>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">Git &amp; GitHub</span>
                     <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Jupyter Notebook</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Linux</span>
                     <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">HTML5 & CSS3</span>
+                    <span class="skill-tag">HTML5 &amp; CSS3</span>
+                </div>
+            </section>
+
+            <!-- EDUCACIÓN -->
+            <section id="educacion" class="fade-in">
+                <h3 class="section-title"><span class="hash">#</span> Educación</h3>
+                <div class="card">
+                    <h4>Licenciatura en Física</h4>
+                    <p>Benemérita Universidad Autónoma de Puebla (BUAP) – Puebla, México</p>
+                </div>
+            </section>
+
+            <!-- CURSOS / CERTIFICACIONES -->
+            <section id="cursos" class="fade-in">
+                <h3 class="section-title"><span class="hash">#</span> Cursos_y_Certificaciones</h3>
+                <div class="card">
+                    <ul class="job-list">
+                        <li>Machine Learning Specialization – Coursera.</li>
+                        <li>Diplomado / formación en Ciencia de Datos – BUAP.</li>
+                        <li>Cursos de Python, SQL y análisis de datos (plataformas en línea y programas formales).</li>
+                        <li>Formación continua en IA generativa y LLMs.</li>
+                    </ul>
                 </div>
             </section>
         </main>
 
-        <footer>
+        <!-- FOOTER / CONTACTO -->
+        <footer id="contacto">
             <p class="comment">// Contacto</p>
             <div class="links">
                 <a href="mailto:aldo.santiago.marquez@outlook.com" class="btn-link">Email</a>
-                <a href="https://www.linkedin.com/in/aldo-santiago-marquez-dc" target="_blank" class="btn-link">LinkedIn</a>
-                <a href="https://github.com/semillero-2025-aldo-santiago" target="_blank" class="btn-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/aldo-santiago-marquez-dc" target="_blank" rel="noopener noreferrer" class="btn-link">LinkedIn</a>
+                <a href="https://github.com/semillero-2025-aldo-santiago" target="_blank" rel="noopener noreferrer" class="btn-link">GitHub</a>
             </div>
             <p class="copyright">© 2025 System.exit(0)</p>
         </footer>
     </div>
-<script>
+
+    <script>
         function iniciarDescarga() {
             const container = document.getElementById('loadingContainer');
             const bar = document.getElementById('loadingBar');
             const icon = document.querySelector('.download-icon');
 
-            // 1. Mostrar la barra
+            // Mostrar barra
             container.style.display = 'block';
-            
-            // 2. Cambiar icono para feedback visual
             icon.className = "fas fa-spinner fa-spin download-icon"; 
 
-            // 3. Iniciar animación (simulamos 1.5 segundos de carga)
+            // Animación de carga
             setTimeout(() => {
                 bar.style.width = '100%';
             }, 100);
 
-            // 4. Cuando termine la "carga", descargar y resetear
+            // Cuando termina la "carga"
             setTimeout(() => {
-                // Crear enlace temporal para descargar
                 const link = document.createElement('a');
-                link.href = 'cv_aldo_santiago.pdf'; // Asegúrate que el nombre coincida
+                link.href = 'cv_aldo_santiago.pdf'; // Asegúrate que el archivo esté en el mismo directorio
                 link.download = 'CV_Aldo_Santiago.pdf';
                 document.body.appendChild(link);
                 link.click();
@@ -146,16 +250,25 @@
                 setTimeout(() => {
                     bar.style.width = '0%';
                     container.style.display = 'none';
-                    icon.className = "fas fa-check download-icon"; // Icono de éxito
-                    
-                    // Volver al icono original después de 2 seg
+                    icon.className = "fas fa-check download-icon";
+
                     setTimeout(() => {
                         icon.className = "fas fa-download download-icon";
                     }, 2000);
                 }, 500);
 
-            }, 1500); // Tiempo total de la carga falsa
+            }, 1500);
         }
+
+        // Accesibilidad con teclado (Enter/Espacio)
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleContainer = document.querySelector('.window-title-container');
+            titleContainer.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    iniciarDescarga();
+                }
+            });
+        });
     </script>
 </body>
 </html>
