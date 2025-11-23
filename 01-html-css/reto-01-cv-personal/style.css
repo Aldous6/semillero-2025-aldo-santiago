@@ -330,4 +330,50 @@ footer {
     box-shadow: 0 0 10px var(--accent-green); /* Glow neón */
     transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); /* Animación suave */
 }
-/* Cambio de prueba para git */
+/* Para que la loading bar se posicione respecto a la top-bar */
+.top-bar {
+    position: relative;
+}
+
+/* NAV superior interno */
+.nav-inline {
+    padding: 0 30px 10px;
+    border-bottom: 1px solid #30363d;
+    display: flex;
+    gap: 20px;
+    font-size: 0.85rem;
+}
+
+.nav-inline a {
+    color: #8b949e;
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: 0.2s;
+}
+
+.nav-inline a:hover {
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
+}
+
+/* Lista de responsabilidades en experiencia/cursos */
+.job-list {
+    margin-top: 8px;
+    padding-left: 18px;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.job-list li {
+    margin-bottom: 4px;
+}
+
+/* Subtítulos dentro del stack */
+.mini-title {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
