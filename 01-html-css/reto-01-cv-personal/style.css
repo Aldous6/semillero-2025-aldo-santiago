@@ -337,12 +337,17 @@ footer {
 
 /* NAV superior interno */
 .nav-inline {
-    padding: 0 30px 10px;
+    padding:  10px 10px;
     border-bottom: 1px solid #30363d;
     display: flex;
     gap: 20px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    justify-content: center; /* ESTO CENTRA LOS ELEMENTOS */
+    flex-wrap: wrap;         /* Esto evita que se rompa en celulares (bajará los links si no caben) */
+    margin-top: 10px;        /* Separa la barra del texto de arriba */
 }
+
+
 
 .nav-inline a {
     color: #8b949e;
