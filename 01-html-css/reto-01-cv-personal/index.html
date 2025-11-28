@@ -10,32 +10,36 @@
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome solo CSS (sin JS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <div class="container">
+        <!-- Checkbox que controla el menú (truco CSS) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
         <!-- TOP BAR -->
         <div class="top-bar">
-            <div class="dots">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-            </div>
+            <!-- Los tres puntitos: botón del menú -->
+            <label for="nav-toggle" class="dots" aria-label="Abrir/cerrar navegación">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </label>
             
             <!-- Contenedor clickeable para descargar CV -->
-            <div class="window-title-container"
-                 onclick="iniciarDescarga()"
-                 role="button"
-                 tabindex="0"
-                 aria-label="Descargar CV en PDF">
+            <a class="window-title-container"
+               href="cv_aldo_santiago.pdf"
+               download
+               aria-label="Descargar CV en PDF">
                 <span class="window-title">aldo_santiago_cv.py</span>
-                <i class="fas fa-download download-icon" title="Descargar PDF"></i>
-            </div>
+                <i class="fas fa-download download-icon" aria-hidden="true"></i>
+            </a>
 
-            <!-- Barra de carga -->
-            <div class="loading-bar-container" id="loadingContainer">
-                <div class="loading-bar" id="loadingBar"></div>
+            <!-- Barra de carga decorativa -->
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
             </div>
         </div>
 
@@ -130,7 +134,6 @@
                         <h4><span class="icon">⚡</span> CNNs en MNIST y CIFAR-10</h4>
                         <p>Clasificación de imágenes probando arquitecturas, regularización y evaluación robusta.</p>
                         <p class="code-text">Stack: TensorFlow, Keras, Python</p>
-                        <!-- <a href="TU_LINK_GITHUB" target="_blank" rel="noopener noreferrer" class="project-link">Ver repo →</a> -->
                     </div>
                     <div class="card project-card">
                         <h4><span class="icon">🩻</span> Detección de Neumonía en Rayos X</h4>
@@ -221,54 +224,5 @@
             <p class="copyright">© 2025 Aldous6</p>
         </footer>
     </div>
-
-    <script>
-        function iniciarDescarga() {
-            const container = document.getElementById('loadingContainer');
-            const bar = document.getElementById('loadingBar');
-            const icon = document.querySelector('.download-icon');
-
-            // Mostrar barra
-            container.style.display = 'block';
-            icon.className = "fas fa-spinner fa-spin download-icon"; 
-
-            // Animación de carga
-            setTimeout(() => {
-                bar.style.width = '100%';
-            }, 100);
-
-            // Cuando termina la "carga"
-            setTimeout(() => {
-                const link = document.createElement('a');
-                link.href = 'cv_aldo_santiago.pdf'; // Asegúrate que el archivo esté en el mismo directorio
-                link.download = 'cv_aldo_santiago.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                // Resetear animación
-                setTimeout(() => {
-                    bar.style.width = '0%';
-                    container.style.display = 'none';
-                    icon.className = "fas fa-check download-icon";
-
-                    setTimeout(() => {
-                        icon.className = "fas fa-download download-icon";
-                    }, 2000);
-                }, 500);
-
-            }, 1500);
-        }
-
-        // Accesibilidad con teclado (Enter/Espacio)
-        document.addEventListener('DOMContentLoaded', () => {
-            const titleContainer = document.querySelector('.window-title-container');
-            titleContainer.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    iniciarDescarga();
-                }
-            });
-        });
-    </script>
 </body>
 </html>

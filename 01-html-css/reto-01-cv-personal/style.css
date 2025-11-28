@@ -1,11 +1,11 @@
 /* --- VARIABLES Y RESET --- */
 :root {
-    --bg-color: #0d1117;      /* Fondo muy oscuro (casi negro) */
-    --card-bg: #161b22;       /* Fondo de tarjetas */
-    --text-main: #c9d1d9;     /* Texto gris claro */
-    --accent-cyan: #58a6ff;   /* Azul tipo VS Code */
-    --accent-green: #2ea043;  /* Verde GitHub */
-    --accent-purple: #bc8cff; /* Púrpura tech */
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-main: #c9d1d9;
+    --accent-cyan: #58a6ff;
+    --accent-green: #2ea043;
+    --accent-purple: #bc8cff;
     --neon-glow: 0 0 10px rgba(88, 166, 255, 0.3);
     --font-mono: 'Fira Code', monospace;
 }
@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- CONTENEDOR PRINCIPAL (VENTANA) --- */
+/* --- CONTENEDOR PRINCIPAL --- */
 .container {
     width: 100%;
     max-width: 900px;
@@ -39,18 +39,31 @@ body {
     position: relative;
 }
 
-/* --- BARRA SUPERIOR (ESTILO MACOS/LINUX) --- */
+/* --- TOGGLE DEL MENÚ --- */
+.nav-toggle {
+    display: none; /* se controla con label + :checked */
+}
+
+/* --- TOP BAR --- */
 .top-bar {
     background: #161b22;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #30363d;
+    position: relative;   /* para la loading bar */
+    gap: 16px;
 }
 
 .dots {
     display: flex;
+    flex-direction: row;      /* Antes solo display:flex */
     gap: 8px;
+    cursor: pointer;
+    transition:
+        flex-direction 0.2s ease,
+        gap 0.2s ease,
+        transform 0.2s ease;
 }
 
 .dot {
@@ -63,11 +76,113 @@ body {
 .yellow { background-color: #ffbd2e; }
 .green { background-color: #27c93f; }
 
+/* Cuando el menú está abierto, los puntos “giran” (horizontal -> vertical visualmente) */
+.nav-toggle:checked ~ .top-bar .dots {
+    flex-direction: column;   /* se apilan verticalmente */
+    gap: 4px;
+    transform: translateY(1px); /* ajuste sutil para que no se vea pegado al borde */
+}
+
 .window-title {
-    margin-left: 20px;
     font-size: 0.85rem;
     color: #8b949e;
     opacity: 0.8;
+}
+
+/* Título clickeable (descarga) */
+.window-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.window-title-container:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.window-title-container:hover .window-title {
+    color: var(--accent-cyan);
+}
+
+.download-icon {
+    color: #8b949e;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.window-title-container:hover .download-icon {
+    color: var(--accent-green);
+}
+
+/* Barra de carga decorativa */
+.loading-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Al pasar el mouse por el título se “llena” la barra */
+.window-title-container:hover ~ .loading-bar-container .loading-bar {
+    width: 100%;
+}
+
+/* --- NAV INTERNO --- */
+.nav-inline {
+    border-bottom: 1px solid #30363d;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    /* estado colapsado por defecto */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    transform: translateY(-4px);
+    transition:
+        max-height 0.25s ease,
+        opacity 0.2s ease,
+        padding 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Menú abierto cuando el checkbox está marcado */
+.nav-toggle:checked ~ .nav-inline {
+    max-height: 120px;
+    opacity: 1;
+    padding: 10px 16px 14px;
+    transform: translateY(0);
+}
+
+.nav-inline a {
+    color: #8b949e;
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: 0.2s;
+}
+
+.nav-inline a:hover {
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
 }
 
 /* --- HEADER Y EFECTO TYPING --- */
@@ -142,7 +257,6 @@ section {
     margin-top: 10px;
 }
 
-/* Estilos de Tarjetas Generales */
 .card {
     background-color: var(--card-bg);
     border: 1px solid #30363d;
@@ -152,7 +266,6 @@ section {
     transition: all 0.3s ease;
 }
 
-/* Efecto Hover "Levitación y Brillo" */
 .card:hover {
     transform: translateY(-5px);
     border-color: var(--accent-cyan);
@@ -183,7 +296,7 @@ section {
     gap: 10px;
 }
 
-/* --- SKILLS (TAGS) --- */
+/* --- SKILLS --- */
 .skills-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -198,13 +311,35 @@ section {
     border-radius: 4px;
     font-size: 0.9rem;
     transition: 0.3s;
-    cursor: crosshair; /* Cursor divertido */
+    cursor: crosshair;
 }
 
 .skill-tag:hover {
     background: var(--accent-cyan);
     color: #0d1117;
     box-shadow: var(--neon-glow);
+}
+
+/* Lista de responsabilidades */
+.job-list {
+    margin-top: 8px;
+    padding-left: 18px;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.job-list li {
+    margin-bottom: 4px;
+}
+
+/* Subtítulos dentro del stack */
+.mini-title {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* --- FOOTER --- */
@@ -241,26 +376,21 @@ footer {
 .copyright { font-size: 0.8rem; color: #484f58; }
 
 /* --- ANIMACIONES --- */
-
-/* 1. Typing del título */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
-/* 2. Cursor parpadeando */
 @keyframes blink {
     50% { opacity: 0; }
 }
 
-/* 3. Fade In (Aparición suave hacia arriba) */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Retrasos para que aparezcan en cascada */
 .delay-1 { animation-delay: 0.5s; }
 .delay-2 { animation-delay: 0.8s; }
 .delay-3 { animation-delay: 1.1s; }
@@ -272,122 +402,68 @@ footer {
     }
 }
 
-/* Responsive para móviles */
-@media (max-width: 600px) {
-    .typing-effect {
-        font-size: 0.9rem; /* Texto más pequeño en cel */
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
     }
-    header { padding: 20px; }
-}
 
-/* --- ESTILOS NUEVOS PARA LA DESCARGA --- */
+    .typing-effect {
+        font-size: 0.9rem;
+    }
+    .nav-inline {
+        position: absolute;
+        top: 52px; /* aprox altura de la top-bar */
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        background: rgba(1, 4, 9, 0.94);   /* oscurece */
+        backdrop-filter: blur(6px);        /* difumina lo de atrás */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline: 20px;
+        z-index: 5;                        /* por encima del contenido */
 
-/* Contenedor del título para que sea clickeable */
-.window-title-container {
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background 0.2s;
-}
+        /* estado colapsado (se hereda de arriba, pero lo reforzamos) */
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding-block: 0;
+    }
 
-.window-title-container:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
+    .nav-inline a {
+        width: 100%;
+        padding: 8px 0;
+    }
 
-.window-title-container:hover .window-title {
-    color: var(--accent-cyan); /* Se ilumina al pasar el mouse */
-}
+    /* Cuando el menú está abierto */
+    .nav-toggle:checked ~ .nav-inline {
+        max-height: 400px;                 /* suficiente para todos los links */
+        opacity: 1;
+        padding-block: 12px 16px;
+        transform: translateY(0);
+    }
 
-.download-icon {
-    color: #8b949e;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.window-title-container:hover .download-icon {
-    color: var(--accent-green); /* Icono se pone verde */
-}
-
-/* Barra de carga posicionado en el borde inferior de la top-bar */
-.loading-bar-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: transparent;
-    display: none; /* Oculto por defecto */
-}
-
-.loading-bar {
-    height: 100%;
-    width: 0%;
-    background-color: var(--accent-green);
-    box-shadow: 0 0 10px var(--accent-green); /* Glow neón */
-    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); /* Animación suave */
-}
-/* Para que la loading bar se posicione respecto a la top-bar */
-.top-bar {
-    position: relative;
-}
-
-/* NAV superior interno */
-.nav-inline {
-    padding:  10px 10px;
-    border-bottom: 1px solid #30363d;
-    display: flex;
-    gap: 20px;
-    font-size: 0.9rem;
-    justify-content: center; /* ESTO CENTRA LOS ELEMENTOS */
-    flex-wrap: wrap;         /* Esto evita que se rompa en celulares (bajará los links si no caben) */
-    margin-top: 10px;        /* Separa la barra del texto de arriba */
+    .dots {
+        cursor: pointer;                   /* en móvil sí es botón */
+    }
 }
 
 
-
-.nav-inline a {
-    color: #8b949e;
-    text-decoration: none;
-    padding-bottom: 4px;
-    transition: 0.2s;
+@media (min-width: 769px) {
+    /* En escritorio el nav es horizontal, centrado */
+    .nav-inline {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
-.nav-inline a:hover {
-    color: var(--accent-cyan);
-    border-bottom: 2px solid var(--accent-cyan);
-}
-
-/* Lista de responsabilidades en experiencia/cursos */
-.job-list {
-    margin-top: 8px;
-    padding-left: 18px;
-    color: #8b949e;
-    font-size: 0.9rem;
-}
-
-.job-list li {
-    margin-bottom: 4px;
-}
-
-/* Subtítulos dentro del stack */
-.mini-title {
-    margin-top: 20px;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: #8b949e;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
+/* --- DETALLES EXTRA --- */
 html {
-    scroll-behavior: smooth; /* Hace que al dar clic en el menú, baje suavemente en vez de saltar de golpe */
+    scroll-behavior: smooth;
 }
 
-/* Esto cambia el color cuando seleccionas texto con el mouse */
 ::selection {
     background-color: var(--accent-cyan);
     color: #0d1117;
