@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0b0f14">
+
+  <title>Aldo — CV / Portfolio</title>
+  <meta name="description" content="CV y portafolio de Aldo. Machine Learning Engineer / Data Scientist. Proyectos, experiencia, skills y contacto." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aldo — CV / Portfolio" />
+  <meta property="og:description" content="CV y portafolio: proyectos, experiencia, skills y contacto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+
+  <!-- Optional: fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="A6.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="false">
+  <div class="preloader__card" role="status" aria-live="polite" aria-label="Cargando">
+    <div class="preloader__brand" aria-hidden="true">
+      <span class="brand__dot"></span>
+      <span class="preloader__name">Aldo</span>
+    </div>
+
+    <div class="preloader__bar" aria-hidden="true">
+      <div class="preloader__barFill"></div>
+    </div>
+
+    <p class="preloader__hint">Loading…</p>
+  </div>
+</div>
+<!-- Entry landing (overlay) -->
+<div class="entry" id="entry" aria-hidden="true">
+  <div class="entry__panel" role="dialog" aria-modal="true" aria-label="Entrada">
+    <p class="kicker">Aldo Santiago Márquez</p>
+    <h1 class="entry__title">Machine Learning Engineer<br><span class="muted">Data Scientist</span></h1>
+    <p class="muted entry__sub">Elige una ruta rápida (toma 5 segundos).</p>
+
+    <div class="entry__actions">
+      <button class="btn btn--primary" data-entry="cv">Ver CV</button>
+      <button class="btn btn--soft" data-entry="projects">Ver proyectos</button>
+      <button class="btn btn--ghost" data-entry="skip">Entrar</button>
+    </div>
+  </div>
+
+  <div class="entry__bg" data-entry="skip" aria-hidden="true"></div>
+</div>
+
+  <noscript>
+    <div style="padding:12px 16px; font-family: system-ui; background:#111; color:#fff;">
+      Esta página funciona mejor con JavaScript habilitado (animaciones, repos de GitHub, filtros).
+    </div>
+  </noscript>
+
+  <!-- Scroll progress -->
+  <div class="scrollbar" aria-hidden="true">
+    <div class="scrollbar__bar" id="scrollbarBar"></div>
+  </div>
+
+  <!-- Background spotlight -->
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <!-- Theme ripple (para el efecto de cambio de tema desde la lámpara) -->
+  <div id="themeRipple" class="themeRipple" aria-hidden="true"></div>
+
+  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <header class="header" id="top">
+    <div class="wrap header__inner">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Aldous6</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggleLines" aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav__menu" id="navMenu">
+          <li><a class="nav__link" href="#about" data-section="about" data-i18n="nav.about">Sobre mí</a></li>
+          <li><a class="nav__link" href="#experience" data-section="experience" data-i18n="nav.experience">Experiencia</a></li>
+          <li><a class="nav__link" href="#projects" data-section="projects" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a class="nav__link" href="#repos" data-section="repos" data-i18n="nav.repos">Repos</a></li>
+          <li><a class="nav__link" href="#skills" data-section="skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a class="nav__link" href="#contact" data-section="contact" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="chip" id="langToggle" type="button" aria-label="Cambiar idioma">
+          <span class="chip__icon" aria-hidden="true">🌐</span>
+          <span class="chip__text" id="langLabel">ES</span>
+        </button>
+
+        <!-- LÁMPARA: reemplaza el viejo themeToggle -->
+        <button id="lampToggle" class="lamp" type="button" aria-label="Cambiar tema" aria-pressed="false" title="Cambiar tema">
+          <span class="lamp__cord" aria-hidden="true"></span>
+          <span class="lamp__shade" aria-hidden="true"></span>
+          <span class="lamp__bulb" aria-hidden="true"></span>
+        </button>
+
+        <a class="btn btn--primary" href="#contact" data-i18n="cta">Hablemos</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero section" aria-label="Introducción">
+      <div class="wrap hero__grid">
+        <div class="reveal">
+          <p class="kicker" data-i18n="hero.kicker">Machine Learning Engineer • Data Scientist</p>
+          <h1 class="hero__title" data-i18n="hero.title">
+            Construyo productos y análisis de datos<br />
+            con rigor científico y enfoque de negocio.
+          </h1>
+
+          <p class="hero__lead" data-i18n="hero.lead">
+            End-to-end: definición del problema, limpieza y validación, feature engineering, entrenamiento/evaluación, y comunicación clara.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects" data-i18n="hero.btnProjects">Ver proyectos</a>
+            <button class="btn btn--ghost" id="copyEmailBtn" type="button">
+              <span class="mono">aldo.santiago.marquez@outlook.com</span>
+              <span class="btn__hint" data-i18n="hero.copy">Copiar</span>
+            </button>
+          </div>
+
+          <div class="hero__meta">
+            <div class="pill" role="list">
+              <span class="pill__item" role="listitem">Python</span>
+              <span class="pill__item" role="listitem">SQL</span>
+              <span class="pill__item" role="listitem">ML</span>
+              <span class="pill__item" role="listitem">TensorFlow/Keras</span>
+              <span class="pill__item" role="listitem">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card hero__card reveal" aria-label="Resumen rápido">
+          <div class="card__header">
+            <h2 class="card__title" data-i18n="hero.cardTitle">Resumen</h2>
+            <p class="card__sub" data-i18n="hero.cardSub">Puebla, México • Remoto</p>
+          </div>
+
+          <div class="card__body">
+            <ul class="list">
+              <li class="list__item" data-i18n="hero.b1">✔ Modelos supervisados, DL y NLP</li>
+              <li class="list__item" data-i18n="hero.b2">✔ Pipelines reproducibles</li>
+              <li class="list__item" data-i18n="hero.b3">✔ Visualización y reporting</li>
+              <li class="list__item" data-i18n="hero.b4">✔ Comunicación técnica/no-técnica</li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="kv">
+              <div class="kv__row">
+                <span class="kv__k" data-i18n="hero.k1">Enfoque</span>
+                <span class="kv__v" data-i18n="hero.v1">Impacto + Calidad</span>
+              </div>
+              <div class="kv__row">
+                <span class="kv__k" data-i18n="hero.k2">Stack</span>
+                <span class="kv__v">Python • Pandas • Sklearn • TF/Keras</span>
+              </div>
+              <div class="kv__row">
+                <span class="kv__k" data-i18n="hero.k3">Interés</span>
+                <span class="kv__v" data-i18n="hero.v3">Data Products / Applied ML</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <a class="btn btn--soft" href="#experience" data-i18n="hero.btnExp">Ver experiencia</a>
+            <a class="btn btn--soft" href="#" id="downloadCv" data-i18n="hero.btnCv">Descargar CV</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="h2" data-i18n="about.title">Sobre mí</h2>
+          <p class="muted" data-i18n="about.subtitle">
+            Mezclo disciplina científica con ejecución práctica: entregables claros, medibles y listos para producción.
+          </p>
+        </div>
+
+        <div class="grid2">
+          <div class="card reveal">
+            <div class="card__body">
+              <p data-i18n="about.p1">
+                Soy físico con experiencia en ciencia de datos. Me gusta construir soluciones end-to-end: desde entender el problema,
+                diseñar métricas y validar datos, hasta iterar modelos y presentar resultados accionables.
+              </p>
+              <p class="muted" data-i18n="about.p2">
+                También tengo experiencia operando en colaboración científica internacional (monitoreo, data quality, incident logs),
+                lo cual fortalece mi comunicación y trabajo distribuido.
+              </p>
+
+              <div class="badgeRow" aria-label="Enlaces">
+                <a class="badge" href="https://linkedin.com/in/aldo-santiago-marquez-dc" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="badge" href="https://github.com/Aldous6" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="badge" href="#" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__body">
+              <h3 class="h3" data-i18n="about.highlights">Highlights</h3>
+              <div class="miniGrid">
+                <div class="mini">
+                  <p class="mini__k" data-i18n="about.h1k">Fortalezas</p>
+                  <p class="mini__v" data-i18n="about.h1v">Estructura, claridad, ownership</p>
+                </div>
+                <div class="mini">
+                  <p class="mini__k" data-i18n="about.h2k">Preferencia</p>
+                  <p class="mini__v" data-i18n="about.h2v">Proyectos con impacto medible</p>
+                </div>
+                <div class="mini">
+                  <p class="mini__k" data-i18n="about.h3k">Industria</p>
+                  <p class="mini__v" data-i18n="about.h3v">Educación, salud, analítica, IA</p>
+                </div>
+                <div class="mini">
+                  <p class="mini__k" data-i18n="about.h4k">Ubicación</p>
+                  <p class="mini__v" data-i18n="about.h4v">MX • Remoto</p>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="quote" role="note">
+                <p class="quote__text" data-i18n="about.quote">
+                  “El mejor modelo no es el más complejo: es el que se entiende, se mantiene y mejora con datos reales.”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="h2" data-i18n="exp.title">Experiencia</h2>
+          <p class="muted" data-i18n="exp.subtitle">Timeline con foco en resultados y responsabilidades.</p>
+        </div>
+
+        <div class="timeline reveal" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="h2" data-i18n="proj.title">Proyectos</h2>
+          <p class="muted" data-i18n="proj.subtitle">Selección de trabajos con enfoque end-to-end.</p>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="chips" id="projectFilters" aria-label="Filtros de proyectos"></div>
+          <div class="search">
+            <input class="search__input" id="projectSearch" type="search" placeholder="Buscar…" aria-label="Buscar proyectos">
+            <span class="search__icon" aria-hidden="true">⌘K</span>
+          </div>
+        </div>
+
+        <div class="cards3" id="projectGrid" aria-label="Lista de proyectos"></div>
+      </div>
+    </section>
+
+    <!-- REPOS (AUTO desde GitHub) -->
+    <section id="repos" class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="h2" data-i18n="repos.title">GitHub Repositories</h2>
+          <p class="muted" data-i18n="repos.subtitle">Lista automática de repos públicos (filtra, busca y ordena).</p>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="search" style="min-width:min(420px,100%);">
+            <input class="search__input" id="repoSearch" type="search" placeholder="Buscar repos…" aria-label="Buscar repositorios">
+            <span class="search__icon" aria-hidden="true">⌘K</span>
+          </div>
+
+          <div class="chips" style="justify-content:flex-end;">
+            <select class="search__input" id="repoSort" aria-label="Ordenar repositorios">
+              <option value="pushed">Más recientes</option>
+              <option value="stars">Más estrellas</option>
+              <option value="name">Nombre</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cards3" id="reposGrid" aria-label="Lista de repositorios"></div>
+
+        <div style="display:flex;justify-content:center;margin-top:14px;">
+          <button class="btn btn--soft" id="reposMore" type="button">Ver más</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="h2" data-i18n="skills.title">Skills</h2>
+          <p class="muted" data-i18n="skills.subtitle">Tecnologías y fortalezas clave.</p>
+        </div>
+
+        <div class="skillsGrid reveal" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="h2" data-i18n="contact.title">Contacto</h2>
+          <p class="muted" data-i18n="contact.subtitle">¿Quieres colaborar o agendar una entrevista? Escríbeme.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card reveal">
+            <div class="card__body">
+              <h3 class="h3" data-i18n="contact.fast">Rápido</h3>
+              <div class="contactBox">
+                <button class="btn btn--primary" id="copyEmailBtn2" type="button">aldo.santiago.marquez@outlook.com</button>
+                <a class="btn btn--soft" href="https://linkedin.com/in/aldo-santiago-marquez-dc" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="btn btn--soft" href="https://github.com/Aldous6" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+
+              <div class="divider"></div>
+
+              <p class="muted" data-i18n="contact.note">
+                Tip: si no recibes respuesta en 24–48h, reintenta por LinkedIn. Siempre reviso bandeja de entrada 🙂
+              </p>
+            </div>
+          </div>
+
+          <form class="card reveal form" id="contactForm" novalidate>
+            <div class="card__body">
+              <h3 class="h3" data-i18n="contact.formTitle">Mensaje</h3>
+
+              <label class="field">
+                <span class="field__label" data-i18n="contact.name">Nombre</span>
+                <input class="field__input" name="name" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Email</span>
+                <input class="field__input" type="email" name="email" autocomplete="email" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label" data-i18n="contact.msg">Mensaje</span>
+                <textarea class="field__input field__textarea" name="message" rows="5" required></textarea>
+              </label>
+
+              <div class="form__row">
+                <button class="btn btn--primary" type="submit" data-i18n="contact.send">Enviar</button>
+                <p class="muted tiny" data-i18n="contact.disclaimer">
+                  Este formulario abre tu cliente de correo (no almaceno datos aquí).
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <footer class="footer">
+          <p class="muted tiny">© <span id="year"></span> Aldo — Built with HTML/CSS/JS</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detalle de proyecto">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <div class="modal__head">
+        <div>
+          <p class="kicker" id="modalTag">Proyecto</p>
+          <h3 class="h3" id="modalTitle">Título</h3>
+        </div>
+        <button class="iconBtn" type="button" data-close aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal__body">
+        <p class="muted" id="modalDesc"></p>
+        <div class="divider"></div>
+        <div class="pill" id="modalPills"></div>
+      </div>
+      <div class="modal__foot">
+        <a class="btn btn--soft" id="modalRepo" href="#" target="_blank" rel="noopener noreferrer">Repo</a>
+        <a class="btn btn--primary" id="modalLive" href="#" target="_blank" rel="noopener noreferrer">Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
