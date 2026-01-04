@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRON INK | Tatuajes CDMX</title>
+    <meta
+      name="description"
+      content="IRON INK — Estudio ficticio de tatuajes. Landing solo con Bootstrap."
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-black text-white">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black bg-opacity-75 fixed-top shadow-sm">
+      <div class="container py-2">
+        <a class="navbar-brand fw-bold text-uppercase fs-4" href="#inicio">IRON INK.</a>
+
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse pt-3 pt-lg-0" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-uppercase fw-semibold small gap-lg-1">
+            <li class="nav-item"><a class="nav-link px-lg-3" href="#concepto">Concepto</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3" href="#artistas">Crew</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3" href="#galeria">Work</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3" href="#precios">Precios</a></li>
+            <li class="nav-item"><a class="nav-link px-lg-3" href="#faq">FAQ</a></li>
+          </ul>
+
+          <div class="d-grid d-lg-block mt-3 mt-lg-0 ms-lg-3">
+            <a href="#contacto" class="btn btn-light fw-bold text-uppercase px-4 py-2">
+              Agenda tu cita
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-5">
+      <!-- HERO -->
+      <header
+        id="inicio"
+        class="position-relative min-vh-100 d-flex align-items-center overflow-hidden"
+      >
+        <img
+          src="https://unsplash.com/photos/FnaV_8ojaW4/download?force=true&w=1920"
+          class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover opacity-25"
+          alt="Tatuaje en proceso"
+          decoding="async"
+        />
+
+        <div class="container position-relative py-5">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 text-center">
+              <p class="text-uppercase text-secondary small mb-3 fw-light">
+                E S T U D I O &nbsp; P R O F E S I O N A L &nbsp; D E &nbsp; T A T U A J E S
+              </p>
+
+              <h1 class="display-2 fw-bold text-uppercase lh-1 mb-3">
+                Dolor &amp; Gloria
+              </h1>
+
+              <p class="lead text-secondary mb-4">
+                Piezas personalizadas, ejecución limpia y una experiencia que sí se siente premium.
+              </p>
+
+              <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="#contacto" class="btn btn-light btn-lg fw-bold text-uppercase px-5">
+                  Cotizar ahora
+                </a>
+                <a href="#galeria" class="btn btn-outline-light btn-lg fw-bold text-uppercase px-5">
+                  Ver galería
+                </a>
+              </div>
+
+              <div class="mt-4 d-flex justify-content-center gap-3 flex-wrap">
+                <span class="badge bg-dark border border-secondary border-opacity-25 fw-semibold">
+                  Material estéril
+                </span>
+                <span class="badge bg-dark border border-secondary border-opacity-25 fw-semibold">
+                  Tintas premium
+                </span>
+                <span class="badge bg-dark border border-secondary border-opacity-25 fw-semibold">
+                  Diseño a medida
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONCEPTO (split) -->
+      <section id="concepto" class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <h2 class="display-5 fw-bold text-uppercase lh-1 mb-3">
+                No es moda.<br />
+                Es historia.
+              </h2>
+
+              <p class="text-secondary mb-4">
+                En IRON INK no copiamos diseños. Te guiamos desde la idea hasta el cuidado final,
+                para que tu tatuaje se vea brutal hoy y también en 10 años.
+              </p>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded">
+                    <p class="mb-1 fw-bold text-uppercase small">Higiene</p>
+                    <p class="mb-0 text-secondary small">
+                      Material desechable y área sanitizada.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded">
+                    <p class="mb-1 fw-bold text-uppercase small">Diseño</p>
+                    <p class="mb-0 text-secondary small">
+                      Boceto y ajustes antes de la aguja.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded">
+                    <p class="mb-1 fw-bold text-uppercase small">Técnica</p>
+                    <p class="mb-0 text-secondary small">
+                      Línea firme, sombras controladas.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="p-3 bg-dark border border-secondary border-opacity-25 rounded">
+                    <p class="mb-1 fw-bold text-uppercase small">Aftercare</p>
+                    <p class="mb-0 text-secondary small">
+                      Guía de curación paso a paso.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="ratio ratio-4x3 rounded overflow-hidden">
+                <img
+                  src="https://unsplash.com/photos/hxNiXP498UI/download?force=true&w=1200"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Artista tatuando"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section id="servicios" class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row mb-4 align-items-end g-3">
+            <div class="col-lg-6">
+              <h2 class="display-6 fw-bold text-uppercase lh-1 mb-0">
+                Nuestra<br />especialidad
+              </h2>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+              <p class="text-secondary mb-0 fw-light">
+                Precisión técnica y respeto por la piel.<br />
+                Te recomendamos el estilo ideal para tu anatomía.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card bg-transparent border-0 h-100">
+                <div class="ratio ratio-1x1 rounded overflow-hidden mb-3">
+                  <img
+                    src="https://unsplash.com/photos/royXRw1UUaQ/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Blackwork"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="h5 fw-bold text-uppercase mb-1">Blackwork</h3>
+                <p class="text-secondary small mb-3">
+                  Contraste alto, tinta sólida y composición limpia.
+                </p>
+                <a
+                  href="#contacto"
+                  class="link-light text-uppercase fw-bold small text-decoration-none"
+                >
+                  Cotizar pieza &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card bg-transparent border-0 h-100">
+                <div class="ratio ratio-1x1 rounded overflow-hidden mb-3">
+                  <img
+                    src="https://unsplash.com/photos/SBrxqx8Vvhg/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Realismo"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="h5 fw-bold text-uppercase mb-1">Realismo</h3>
+                <p class="text-secondary small mb-3">
+                  Sombras suaves, volumen y detalle tipo foto.
+                </p>
+                <a
+                  href="#contacto"
+                  class="link-light text-uppercase fw-bold small text-decoration-none"
+                >
+                  Cotizar pieza &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card bg-transparent border-0 h-100">
+                <div class="ratio ratio-1x1 rounded overflow-hidden mb-3">
+                  <img
+                    src="https://unsplash.com/photos/vunSUqsOGPk/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Fine line"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="h5 fw-bold text-uppercase mb-1">Fine Line</h3>
+                <p class="text-secondary small mb-3">
+                  Líneas finas y elegantes con enfoque minimal.
+                </p>
+                <a
+                  href="#contacto"
+                  class="link-light text-uppercase fw-bold small text-decoration-none"
+                >
+                  Cotizar pieza &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card bg-transparent border-0 h-100">
+                <div class="ratio ratio-1x1 rounded overflow-hidden mb-3">
+                  <img
+                    src="https://unsplash.com/photos/ar_kj8syD0E/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Lettering"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="h5 fw-bold text-uppercase mb-1">Lettering</h3>
+                <p class="text-secondary small mb-3">
+                  Tipografía con peso, ritmo y legibilidad real.
+                </p>
+                <a
+                  href="#contacto"
+                  class="link-light text-uppercase fw-bold small text-decoration-none"
+                >
+                  Cotizar pieza &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card bg-transparent border-0 h-100">
+                <div class="ratio ratio-1x1 rounded overflow-hidden mb-3">
+                  <img
+                    src="https://unsplash.com/photos/zeT_i6av9rU/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Piercing"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="h5 fw-bold text-uppercase mb-1">Piercing</h3>
+                <p class="text-secondary small mb-3">
+                  Perforación higiénica y joyería de calidad.
+                </p>
+                <a
+                  href="#contacto"
+                  class="link-light text-uppercase fw-bold small text-decoration-none"
+                >
+                  Agendar &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card bg-transparent border-0 h-100">
+                <div class="ratio ratio-1x1 rounded overflow-hidden mb-3">
+                  <img
+                    src="https://unsplash.com/photos/5t4qCgtaLGU/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Cover-up"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="h5 fw-bold text-uppercase mb-1">Cover-ups</h3>
+                <p class="text-secondary small mb-3">
+                  Cubrimos con estrategia: diseño + contraste + forma.
+                </p>
+                <a
+                  href="#contacto"
+                  class="link-light text-uppercase fw-bold small text-decoration-none"
+                >
+                  Evaluar mi caso &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTISTAS -->
+      <section id="artistas" class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+            <div>
+              <h2 class="display-6 fw-bold text-uppercase mb-1">El Crew</h2>
+              <p class="text-secondary mb-0">Elige a tu artista según tu estilo.</p>
+            </div>
+            <a href="#contacto" class="btn btn-outline-light text-uppercase fw-bold">
+              Quiero asesoría
+            </a>
+          </div>
+
+          <div class="card bg-dark border-0 shadow-sm overflow-hidden mb-4">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-md-5">
+                <div class="ratio ratio-1x1">
+                  <img
+                    src="https://unsplash.com/photos/Xkdyu1IOBb4/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Artista principal"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body p-4 p-lg-5">
+                  <p class="text-uppercase text-secondary small fw-semibold mb-2">
+                    Artista destacado
+                  </p>
+                  <h3 class="h3 fw-bold text-uppercase mb-2">Dante “Ink”</h3>
+                  <p class="text-secondary mb-4">
+                    Blackwork, sombras y composición. Especialista en piezas medianas y grandes con alto contraste.
+                  </p>
+
+                  <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge bg-black border border-secondary border-opacity-25">Blackwork</span>
+                    <span class="badge bg-black border border-secondary border-opacity-25">Sombras</span>
+                    <span class="badge bg-black border border-secondary border-opacity-25">Geometría</span>
+                  </div>
+
+                  <a href="#contacto" class="btn btn-light fw-bold text-uppercase px-4">
+                    Cotizar con Dante
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-md-6">
+              <div class="card bg-transparent border border-secondary border-opacity-25 h-100">
+                <div class="ratio ratio-4x3">
+                  <img
+                    src="https://unsplash.com/photos/2w74i-n8E_0/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Artista 2"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body p-4">
+                  <h3 class="h5 fw-bold text-uppercase mb-1">Valkyria</h3>
+                  <p class="text-secondary small mb-3">
+                    Neotradicional, color controlado y cover-ups inteligentes.
+                  </p>
+                  <a
+                    href="#contacto"
+                    class="link-light text-uppercase fw-bold small text-decoration-none"
+                  >
+                    Agendar con Valkyria &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="card bg-transparent border border-secondary border-opacity-25 h-100">
+                <div class="ratio ratio-4x3">
+                  <img
+                    src="https://unsplash.com/photos/uciI7h128_M/download?force=true&w=900"
+                    class="w-100 h-100 object-fit-cover"
+                    alt="Artista 3"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-body p-4">
+                  <h3 class="h5 fw-bold text-uppercase mb-1">Sombra</h3>
+                  <p class="text-secondary small mb-3">
+                    Lettering, chicano y piezas con narrativa. Línea firme y detalle fino.
+                  </p>
+                  <a
+                    href="#contacto"
+                    class="link-light text-uppercase fw-bold small text-decoration-none"
+                  >
+                    Agendar con Sombra &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERÍA -->
+      <section id="galeria" class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+            <div>
+              <h2 class="display-6 fw-bold text-uppercase mb-1">Work</h2>
+              <p class="text-secondary mb-0">Una muestra (ficticia) del estilo del estudio.</p>
+            </div>
+            <a href="#contacto" class="btn btn-outline-light text-uppercase fw-bold">
+              Quiero algo así
+            </a>
+          </div>
+        </div>
+
+        <div class="container-fluid px-0">
+          <div class="row g-0">
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/5epn6K3KNRg/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 1"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/K54tv0RTjxQ/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 2"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/zvTFwgJv9hA/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 3"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/wH-uXvyQ9Lg/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 4"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/RBsrv4yV5KY/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 5"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/bWoig_hZxIU/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 6"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/SBrxqx8Vvhg/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 7"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="ratio ratio-1x1">
+                <img
+                  src="https://unsplash.com/photos/royXRw1UUaQ/download?force=true&w=900"
+                  class="w-100 h-100 object-fit-cover"
+                  alt="Galería 8"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRECIOS -->
+      <section id="precios" class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row align-items-end g-3 mb-4">
+            <div class="col-lg-7">
+              <h2 class="display-6 fw-bold text-uppercase mb-1">Precios</h2>
+              <p class="text-secondary mb-0">
+                Rangos base (ficticios). El precio final depende de tamaño, zona y complejidad.
+              </p>
+            </div>
+            <div class="col-lg-5 text-lg-end">
+              <a href="#contacto" class="btn btn-light fw-bold text-uppercase">
+                Quiero cotización exacta
+              </a>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-lg-4">
+              <div class="card bg-dark border border-secondary border-opacity-25 h-100">
+                <div class="card-body p-4">
+                  <h3 class="h5 fw-bold text-uppercase mb-1">Mini (5cm)</h3>
+                  <p class="text-secondary small mb-3">
+                    Perfecto para símbolos, líneas finas y detalles.
+                  </p>
+                  <p class="display-6 fw-bold mb-3">$800+</p>
+                  <ul class="list-unstyled text-secondary small mb-4">
+                    <li class="mb-2">— Diseño simple</li>
+                    <li class="mb-2">— 1 zona pequeña</li>
+                    <li class="mb-2">— Aftercare incluido</li>
+                  </ul>
+                  <a href="#contacto" class="btn btn-outline-light w-100 text-uppercase fw-bold">
+                    Apartar mini
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <div class="card bg-black border border-light border-opacity-25 h-100 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h3 class="h5 fw-bold text-uppercase mb-0">Sesión (4h)</h3>
+                    <span class="badge bg-light text-dark text-uppercase fw-bold">Más popular</span>
+                  </div>
+                  <p class="text-secondary small mb-3">Ideal para piezas medianas con sombra.</p>
+                  <p class="display-6 fw-bold mb-3">$3,500</p>
+                  <ul class="list-unstyled text-secondary small mb-4">
+                    <li class="mb-2">— Boceto + ajustes</li>
+                    <li class="mb-2">— Sombreado / linework</li>
+                    <li class="mb-2">— Guía de curación</li>
+                  </ul>
+                  <a href="#contacto" class="btn btn-light w-100 text-uppercase fw-bold">
+                    Agendar sesión
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <div class="card bg-dark border border-secondary border-opacity-25 h-100">
+                <div class="card-body p-4">
+                  <h3 class="h5 fw-bold text-uppercase mb-1">Full Day (8h)</h3>
+                  <p class="text-secondary small mb-3">
+                    Para piezas grandes o avance fuerte de proyecto.
+                  </p>
+                  <p class="display-6 fw-bold mb-3">$6,000</p>
+                  <ul class="list-unstyled text-secondary small mb-4">
+                    <li class="mb-2">— Planeación completa</li>
+                    <li class="mb-2">— Avance mayor</li>
+                    <li class="mb-2">— Prioridad de agenda</li>
+                  </ul>
+                  <a href="#contacto" class="btn btn-outline-light w-100 text-uppercase fw-bold">
+                    Reservar full day
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-secondary small mt-4 mb-0">
+            Anticipo de diseño (ficticio):
+            <span class="fw-semibold text-white">$500</span>. Re-agendas con 24h de anticipación.
+          </p>
+        </div>
+      </section>
+
+      <!-- TESTIMONIOS (CAROUSEL) -->
+      <section class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row align-items-end g-3 mb-4">
+            <div class="col-lg-8">
+              <h2 class="display-6 fw-bold text-uppercase mb-1">Testimonios</h2>
+              <p class="text-secondary mb-0">Texto ficticio, pero con tono real de cliente.</p>
+            </div>
+          </div>
+
+          <div id="testimonios" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#testimonios"
+                data-bs-slide-to="0"
+                class="active"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#testimonios"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#testimonios"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="p-4 p-lg-5 bg-dark border border-secondary border-opacity-25 rounded">
+                  <p class="fs-5 mb-3">
+                    “Se siente profesional desde que entras. Limpieza impecable y la línea quedó perfecta.”
+                  </p>
+                  <p class="text-secondary mb-0 text-uppercase small fw-semibold">
+                    — Fer, Blackwork en antebrazo
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="p-4 p-lg-5 bg-dark border border-secondary border-opacity-25 rounded">
+                  <p class="fs-5 mb-3">
+                    “Me asesoraron con el tamaño y la zona. No me vendieron humo: me guiaron.”
+                  </p>
+                  <p class="text-secondary mb-0 text-uppercase small fw-semibold">
+                    — Pau, Fine line minimal
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="p-4 p-lg-5 bg-dark border border-secondary border-opacity-25 rounded">
+                  <p class="fs-5 mb-3">
+                    “El cover-up quedó brutal. Nadie diría que había un tatuaje viejo abajo.”
+                  </p>
+                  <p class="text-secondary mb-0 text-uppercase small fw-semibold">
+                    — Luis, Cover-up en bíceps
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#testimonios"
+              data-bs-slide="prev"
+              aria-label="Anterior"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#testimonios"
+              data-bs-slide="next"
+              aria-label="Siguiente"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (ACCORDION) -->
+      <section id="faq" class="border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row align-items-end g-3 mb-4">
+            <div class="col-lg-8">
+              <h2 class="display-6 fw-bold text-uppercase mb-1">FAQ</h2>
+              <p class="text-secondary mb-0">Resolvemos lo típico sin rodeos.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion-flush" id="accordionFaq">
+            <div class="accordion-item bg-black border-bottom border-secondary border-opacity-25">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed bg-black text-white shadow-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq1"
+                  aria-expanded="false"
+                  aria-controls="faq1"
+                >
+                  ¿Duele mucho?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                <div class="accordion-body text-secondary">
+                  Depende de la zona y tu tolerancia. Te guiamos con pausas; es totalmente manejable.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-black border-bottom border-secondary border-opacity-25">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed bg-black text-white shadow-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq2"
+                  aria-expanded="false"
+                  aria-controls="faq2"
+                >
+                  ¿Qué cuidados debo seguir?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                <div class="accordion-body text-secondary">
+                  Limpieza suave, nada de sol directo, hidratar y no rascar. Te damos guía completa al terminar.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-black border-bottom border-secondary border-opacity-25">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed bg-black text-white shadow-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq3"
+                  aria-expanded="false"
+                  aria-controls="faq3"
+                >
+                  ¿Se necesita anticipo?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                <div class="accordion-body text-secondary">
+                  Sí. Sirve para reservar horario y preparar diseño. Se descuenta del total.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item bg-black border-bottom border-secondary border-opacity-25">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed bg-black text-white shadow-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq4"
+                  aria-expanded="false"
+                  aria-controls="faq4"
+                >
+                  ¿Puedo llevar una referencia?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                <div class="accordion-body text-secondary">
+                  Claro. La usamos como inspiración y adaptamos el diseño a tu cuerpo (sin copiar tal cual).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="bg-dark border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <h2 class="display-6 fw-bold text-uppercase lh-1 mb-3">Agenda tu cita</h2>
+              <p class="text-secondary mb-4">
+                Cuéntanos tu idea, zona del cuerpo y estilo. Te respondemos con disponibilidad y rango estimado.
+              </p>
+
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-black border border-secondary border-opacity-25">CDMX</span>
+                <span class="badge bg-black border border-secondary border-opacity-25">Zona Rosa</span>
+                <span class="badge bg-black border border-secondary border-opacity-25">Citas limitadas</span>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <form class="bg-black border border-secondary border-opacity-25 p-4 p-lg-5 rounded">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label text-secondary text-uppercase small fw-semibold">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control bg-dark text-white border-secondary border-opacity-25"
+                    id="nombre"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label text-secondary text-uppercase small fw-semibold">Email</label>
+                  <input
+                    type="email"
+                    class="form-control bg-dark text-white border-secondary border-opacity-25"
+                    id="email"
+                    placeholder="name@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="estilo" class="form-label text-secondary text-uppercase small fw-semibold">Estilo deseado</label>
+                  <select
+                    class="form-select bg-dark text-white border-secondary border-opacity-25"
+                    id="estilo"
+                    required
+                  >
+                    <option value="" selected disabled>Selecciona un estilo</option>
+                    <option>Blackwork</option>
+                    <option>Realismo</option>
+                    <option>Fine Line</option>
+                    <option>Lettering</option>
+                    <option>Cover-up</option>
+                    <option>Piercing</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label text-secondary text-uppercase small fw-semibold">Mensaje</label>
+                  <textarea
+                    class="form-control bg-dark text-white border-secondary border-opacity-25"
+                    id="mensaje"
+                    rows="5"
+                    placeholder="Describe tu idea, zona del cuerpo y tamaño aproximado..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button class="btn btn-light btn-lg w-100 fw-bold text-uppercase" type="submit">
+                  Enviar solicitud
+                </button>
+
+                <p class="text-secondary small mt-3 mb-0">
+                  Al enviar, aceptas nuestra política (ficticia) de cancelación y re-agenda.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-black border-top border-secondary border-opacity-25">
+        <div class="container py-5">
+          <div class="row g-4">
+            <div class="col-12 col-lg-5">
+              <p class="h5 fw-bold text-uppercase mb-2">IRON INK STUDIO</p>
+              <p class="text-secondary mb-0">
+                Calle Génova 44, Zona Rosa, CDMX<br />
+                Lun–Sáb: 12:00–20:00
+              </p>
+            </div>
+
+            <div class="col-12 col-lg-4">
+              <p class="text-uppercase small fw-semibold text-secondary mb-2">Contacto</p>
+              <p class="mb-0">
+                <span class="text-secondary">Tel:</span> +52 55 1234 6666<br />
+                <span class="text-secondary">Email:</span> citas@ironink.mx
+              </p>
+            </div>
+
+            <div class="col-12 col-lg-3">
+              <p class="text-uppercase small fw-semibold text-secondary mb-2">Redes</p>
+              <div class="d-flex flex-column gap-2">
+                <a href="#" class="link-light text-decoration-none">Instagram</a>
+                <a href="#" class="link-light text-decoration-none">Facebook</a>
+                <a href="#" class="link-light text-decoration-none">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-secondary border-opacity-25 my-4" />
+
+          <p class="text-secondary small mb-0">
+            &copy; 2025 IRON INK. Landing ficticia — Solo Bootstrap.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
